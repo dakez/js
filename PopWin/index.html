@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>The Ultimate JavaScript Popup Window</title>
+		<style type="text/css">
+			* { margin: 0; padding: 0; font: 12px Verdana, Arial, sans-serif; overflow: auto; padding: 5px }
+			input { width: 120px }
+			h1, h2 { font-weight: bold; padding: 1em 0 }
+		</style>
+		<script type="text/javascript" src="popwin.js"></script>
+		<script type="text/javascript">
+			popwin.init();
+		</script>
+	</head>
+	<body>
+		<h1>Test Suite</h1>
+
+		<h2>Default</h2>
+		<input type="button" value="default" onclick="javascript:popwin.open()" /> popwin.open()<br />
+
+		<h2>Parameters</h2>
+		<input type="button" value="640x400" onclick="javascript:popwin.open('640x400.html', 640, 400)" /> popwin.open('640x400.html', 640, 400)<br />
+		<input type="button" value="640x400" onclick="javascript:popwin.open('640x400.gif', 640, 400)" /> popwin.open('640x400.gif', 640, 400)<br />
+		<input type="button" value="800x600" onclick="javascript:popwin.open('800x600.html', 800, 600)" /> popwin.open('800x600.html', 800, 600)<br />
+		<input type="button" value="1024x768" onclick="javascript:popwin.open('1024x768.html', 1024, 768)" /> popwin.open('1024x768.html', 1024, 768)<br />
+
+		<h2>Too big / too small</h2>
+		<input type="button" value="9999x9999" onclick="javascript:popwin.open('', 9999, 9999)" /> popwin.open('', 9999, 9999)<br />
+		<input type="button" value="11x11" onclick="javascript:popwin.open('', 11, 11)" /> popwin.open('', 11, 11)<br />
+
+		<h2>JSON parameters</h2>
+		<input type="button" value="768, 1024" onclick="javascript:winOpen('', 768, 1024)" /> winOpen('', 768, 1024)<br />
+		<input type="button" value="768, 1024" onclick="javascript:winOpen('768x1024.html', 768, 1024)" /> winOpen('768x1024.html', 768, 1024)<br />
+
+		<h2>Error in parameters</h2>
+		<input type="button" value="1,2,3,4,5" onclick="javascript:popwin.open(0,1,2,3,4,5)" /> popwin.open(0,1,2,3,4,5)<br />
+		<input type="button" value="abcd" onclick="javascript:popwin.open('abcd')" /> popwin.open('abcd')<br />
+
+		<h2>Please turn on JavaScript console.</h2>
+		<script type="text/javascript">
+			function winOpen(htmlFile, winWidth, winHeight)
+			{
+				popwin.open({
+					innerHTML: htmlFile,
+					width		: winWidth,
+					height	: winHeight,
+					title		: 'This is a test',
+					attributes:
+					{
+						status : true,
+						scrollbars : true
+					}
+				});
+			}
+		</script>
+	</body>
+</html>
