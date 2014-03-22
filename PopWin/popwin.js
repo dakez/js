@@ -1,16 +1,13 @@
-/* Copyright Dado K. www.github.com/dadok
+/* Copyright Dake Z. www.github.com/dakez
  *
  * The Ultimate JavaScript Popup Window 
  *
  * Details and latest version at:
- * www.github.com/dadok/popwin
- *
- * This script is distributed under the GNU Lesser General Public License.
- * Read the entire license text here: http://www.gnu.org/licenses/lgpl.html
+ * www.github.com/dakez/js/popwin
  *
  */
 
-// $Id: popwin.js,v 1.0 2013/11/24 23:00:00 dadok Exp $
+// $Id: popwin.js,v 1.0 2014/03/22 23:00:00 dakez Exp $
 
 var popwin = {
 	handle: null,
